@@ -1,0 +1,97 @@
+@font-face {
+    font-family: "Super Creamy";
+    src: url("{{ asset('/fonts/SuperCreamy.ttf') }}");
+}
+
+@font-face {
+    font-family: "Comic Sans MS";
+    src: url(" {{asset('/fonts/COMICSANS.TTF')}} ");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+html, body, #half-blue-pink-bg {
+    position: absolute;
+
+    /* Set the height to match that of the viewport. */
+    height: 100vh;
+
+    /* Set the width to match that of the viewport. */
+    width: 100vw;
+
+    /* Remove any browser-default margins. */
+    margin: 0;  
+    background: linear-gradient(180deg, #A2D2FF 0%, #FFAFCC 100%);
+}
+
+.transparent-bg {
+    background-color: transparent !important;
+}
+
+#brand {
+    color: #FFF;
+    font-family: "Super Creamy";
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#login-text {
+    color: #000;
+    font-family: "Comic Sans MS";
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.feature-text {
+    color: #000;
+    text-align: center;
+    font-family: "Comic Sans MS";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.feature-margin {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.pt-serif-regular {
+    font-family: "PT Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#stimulus1 {
+    color: #FFF;
+    font-family: "PT Serif", serif;
+    font-size: 75px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 132.44%; /* 127.143px */
+    text-shadow: -1px 0 #CDB4DB, 0 1px #CDB4DB, 1px 0 #CDB4DB, 0 -1px #CDB4DB;
+}
+
+#stimulus2 {
+    color: #FC4C8F;
+    font-family: "Comic Sans MS";
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 139.293%; /* 62.682px */
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+}
+
+#call-to-action-text {
+    color: #000;
+    font-family: "Comic Sans MS";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
