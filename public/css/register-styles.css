@@ -1,0 +1,73 @@
+@font-face {
+    font-family: "Super Creamy";
+    src: url("{{ asset('/fonts/SuperCreamy.ttf') }}");
+}
+
+@font-face {
+    font-family: "Comic Sans MS";
+    src: url(" {{asset('/fonts/COMICSANS.TTF')}} ");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+html, body, #half-blue-pink-bg {
+    position: absolute;
+
+    /* Set the height to match that of the viewport. */
+    height: 100vh;
+
+    /* Set the width to match that of the viewport. */
+    width: 100vw;
+
+    /* Remove any browser-default margins. */
+    margin: 0;  
+    background: linear-gradient(180deg, #A2D2FF 0%, #FFAFCC 100%);
+}
+
+#white-square {
+    background-color: #fff;
+}
+
+#brand {
+    color: #FFF;
+    font-family: "Super Creamy";
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.element {
+    position: fixed;
+    inset: 0px;
+    width: 12rem;
+    height: 5rem;
+    max-width: 100vw;
+    max-height: 100dvh;
+    margin: auto;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+#register-text {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #fff;
+}
+
+.purple-button {
+    border-radius: 16px;
+    font-size: large;
+    background: #B59FC2;
+    box-shadow: -5px 7px 0px 0px #897593;
+    border: none;
+    height: 50px;
+    width: 200px;
+}
