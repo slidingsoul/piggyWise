@@ -36,7 +36,7 @@
                                     </defs>
                                 </svg>
                             </div>
-                            <input type="text" class="form-control form-control-lg" placeholder="Username">
+                            <input type="text" class="form-control form-control-lg bigger-input" placeholder="Username">
                         </div>
                     </div>
                     <div class="mb-3 mt-5">
@@ -48,15 +48,14 @@
                                     <path d="M18.6923 60.5384C27.3589 60.5384 34.3846 53.513 34.3846 44.8461C34.3846 36.1795 27.3589 29.1538 18.6923 29.1538C10.0257 29.1538 3 36.1795 3 44.8461C3 53.513 10.0257 60.5384 18.6923 60.5384Z" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </div>
-                            <input type="text" class="form-control form-control-lg" placeholder="Password">
+                            <input type="text" class="form-control form-control-lg bigger-input" placeholder="Password">
                         </div>
                     </div>
-                    <div class="text-center mt-5">
+                    <div class="text-center" style="margin-top: 5rem;">
                         <form action="" method="POST"></form>
                         <button type="submit" class="purple-button" id="register-text">Register</button>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
