@@ -1,0 +1,29 @@
+body {
+    background-color: #7FA6CB !important;
+}
+.leaderboard {    
+    margin: 60px 0;
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.leaderboard .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    padding: 10px 30px !important;
+    background-color: #a2d2ff !important;
+    border-radius: 20px !important;
+}
+.leaderboard-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.table tbody tr {
+    font-size: 18px;
+    font-weight: bold;
+}
