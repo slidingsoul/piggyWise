@@ -18,3 +18,10 @@ Route::get('/login', function () {
 Route::get('/leaderboard', function () {
     return view('leaderboard.leaderboard');
 });
+
+Route::get('/wishlist', function () {
+    return view('wishlist.index');
+});
+Route::get('/wishlist/view', function () {
+    return view('wishlist.view');
+});

@@ -1,0 +1,40 @@
+.wishlist-index, .wishlist-view {
+    margin-top: 50px;
+}
+.wishlist-index .row {
+    background-color: #A2D2FF;
+    border-radius: 20px;
+    border: none;
+    padding: 40px 20px;
+    box-shadow: 10px 10px 0 #88b0d6;
+}
+.btn-simpan {
+    background-color: #FFC8DD !important;
+    border-radius: 20px;
+    box-shadow: 4px 6px 0 #EEB9CD;
+}
+
+.wish-card {
+    background-color: #CDB4DB;
+    width: 80% !important;
+    border-radius: 20px;
+    padding: 20px 50px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 10px 10px 0 #a98fb8;
+}
+.fireworks {
+    width: 300px;
+}
+.hidden {
+    display: none !important;
+}
+.progress-bar {
+    background-color: #B194EA !important;
+}
+.btn-tabung {
+    background-color: #BDE0FE !important;
+    border-radius: 20px;
+    box-shadow: 4px 6px 0 #88a7c2;
+}

@@ -23,16 +23,14 @@
 
     <link rel="icon" href=" {{asset('/img/Designer-Photoroom.png-Photoroom.png')}} ">
 </head>
-<body>
+<body style="background-color: #7FA6CB;">
 
     @include('partials.nav')
-
-    
 
     <section class="leaderboard">
         <div class="container">
             <div class="row">
-                <div class="card col-8">
+                <div class="card col-lg-8 col-sm-12">
                     <div class="row">
                         <div class="col-12 leaderboard-title fa-2xl">
                             <i class="fa-solid fa-crown"></i>
@@ -164,13 +162,15 @@
             // sorting dari data pertama berdasarkan exp
             order: [[3, 'desc']],
             "fnRowCallback": function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-            if (aData[0] == "#1") {
-                $('td', nRow).css('--bs-table-bg', '#FFED4F'); // jika rank 1, maka background color berubah
-            } else if (aData[0] == "#2") {
-                $('td', nRow).css('--bs-table-bg', '#C0C0C0'); // jika rank 2, maka background color berubah
-            } else if (aData[0] == "#3") {
-                $('td', nRow).css('--bs-table-bg', '#CD7F32'); // jika rank 3, maka background color berubah
-            }
+                if (aData[0] == "#1") {
+                    $('td', nRow).css('--bs-table-bg', '#FFED4F'); // jika rank 1, maka background color berubah
+                } else if (aData[0] == "#2") {
+                    $('td', nRow).css('--bs-table-bg', '#C0C0C0'); // jika rank 2, maka background color berubah
+                } else if (aData[0] == "#3") {
+                    $('td', nRow).css('--bs-table-bg', '#CD7F32'); // jika rank 3, maka background color berubah
+                } else {
+                    $('td', nRow).css('--bs-table-bg', '#A2D2FF'); // jika rank 3, maka background color berubah
+                }
             }
         });
     </script>

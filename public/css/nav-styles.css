@@ -43,3 +43,9 @@
     box-shadow: 4px 6px 0 #B59FC2;
 } */
 
+@media screen and (max-width: 768px) {
+    .nav-item {
+        margin: 12px 0;
+    }
+}
+
