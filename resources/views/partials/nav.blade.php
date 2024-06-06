@@ -20,7 +20,7 @@
           </li>
           <li class="nav-item">
             <form action="/logout" method="POST">
-                {{-- @csrf --}}
+                @csrf
                 <button type="submit">
                   Logout
                 </button>

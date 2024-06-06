@@ -15,9 +15,11 @@
             <div class="container-fluid">
               <span class="navbar-brand" id="brand">PiggyWise</span>
                 <form class="d-flex">
-                    <button type="button" class="btn" style="border-radius: 50px; background: #FFC8DD; box-shadow: -5px 7px 0px 0px #FFAFCC; border: none !important;">
-                        <span id="login-text">login <img src=" {{asset('/img/login-1--arrow-enter-frame-left-login-point-rectangle.svg')}} " style="margin-bottom: 15px;"></span>
-                    </button>
+                    <a href="/login">
+                        <button type="button" class="btn" style="border-radius: 50px; background: #FFC8DD; box-shadow: -5px 7px 0px 0px #FFAFCC; border: none !important;">
+                            <span id="login-text">login <img src=" {{asset('/img/login-1--arrow-enter-frame-left-login-point-rectangle.svg')}} " style="margin-bottom: 15px;"></span>
+                        </button>
+                    </a>
                 </form>
             </div>
         </nav>
@@ -48,9 +50,11 @@
                 <div id="stimulus1">Siapkan tabungan untuk masa depan.</div>
                 <div id="stimulus2">Aplikasi menabung untuk anak-anak.</div>
                 <div style="margin-top: 1rem;">
-                    <button type="button" class="btn" style="border-radius: 50px; background: #91FFF2;; box-shadow: -1px 1px 1px -1px #FFF; border: 3px solid #676767;">
-                        <span id="call-to-action-text">MULAI MENABUNG</span>
-                    </button>
+                    <a href="/register">
+                        <button type="button" class="btn" style="border-radius: 50px; background: #91FFF2;; box-shadow: -1px 1px 1px -1px #FFF; border: 3px solid #676767;">
+                            <span id="call-to-action-text">MULAI MENABUNG</span>
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>

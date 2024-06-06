@@ -17,6 +17,8 @@
               <span class="navbar-brand" id="brand">PiggyWise</span>
             </div>
         </nav>
+        <form action="/reg" method="POST">
+        @csrf
         <div class="element" style="height: 60vh; width: 45vw; background-color: #fff; border-radius: 1rem;">
             <div class="row justify-content-center">
                 <div class="col-10">
@@ -36,7 +38,7 @@
                                     </defs>
                                 </svg>
                             </div>
-                            <input type="text" class="form-control form-control-lg bigger-input" placeholder="Username">
+                            <input type="text" name="username" class="form-control form-control-lg bigger-input" placeholder="Username">
                         </div>
                     </div>
                     <div class="mb-3 mt-5">
@@ -48,16 +50,16 @@
                                     <path d="M18.6923 60.5384C27.3589 60.5384 34.3846 53.513 34.3846 44.8461C34.3846 36.1795 27.3589 29.1538 18.6923 29.1538C10.0257 29.1538 3 36.1795 3 44.8461C3 53.513 10.0257 60.5384 18.6923 60.5384Z" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </div>
-                            <input type="text" class="form-control form-control-lg bigger-input" placeholder="Password">
+                            <input type="password" name="password" class="form-control form-control-lg bigger-input" placeholder="Password">
                         </div>
                     </div>
                     <div class="text-center" style="margin-top: 5rem;">
-                        <form action="" method="POST"></form>
                         <button type="submit" class="purple-button" id="register-text">Register</button>
                     </div>
                 </div>
             </div>
         </div>
+        </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
