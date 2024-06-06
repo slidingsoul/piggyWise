@@ -14,3 +14,7 @@ Route::get('/register', function () {
 Route::get('/login', function () {
     return view('login.login');
 });
+
+Route::get('/leaderboard', function () {
+    return view('leaderboard.leaderboard');
+});
