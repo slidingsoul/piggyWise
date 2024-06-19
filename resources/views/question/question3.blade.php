@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pertanyaan</title>
+    <link rel="stylesheet" href="{{ asset('/css/nav-styles.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         * {
             margin: 0;
@@ -17,46 +20,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            display: block;
             justify-content: center;
             height: 100vh;
-        }
-
-        .navbar {
-            width: 100%;
-            background-color: #ADD8E6;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            top: 0;
-        }
-
-        .navbar .logo img {
-            height: 30px;
-        }
-
-        .navbar .nav-links {
-            display: flex;
-            gap: 10px;
-        }
-
-        .navbar .nav-links a {
-            text-decoration: none;
-            color: #000;
-            font-size: 16px;
-            padding: 5px 10px;
-            border-radius: 5px;
-            background-color: #F8BBD0;
-        }
-
-        .navbar .nav-links a:hover {
-            background-color: #FF80AB;
-        }
-
-        .navbar .nav-links a#should-buy {
-            background-color: #C03B6E;
-            color: white;
         }
 
         .content {
@@ -69,7 +35,7 @@
             text-align: center;
         }
 
-        .question {
+        .question-box {
             background-color: #B2EBF2;
             width: 625px;
             height: 250px;
@@ -116,20 +82,9 @@
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <div class="logo">
-            <img src="{{ asset('img/logo-navbar.svg') }}" alt="PiggyWise">
-        </div>
-        <div class="nav-links">
-            <a id="should-buy" href="#">Should U Buy It?</a>
-            <a href="#">Saving</a>
-            <a href="#">Leaderboard</a>
-            <a href="#">Wishlist</a>
-            <a href="#">Logout</a>
-        </div>
-    </div>
+    @include('partials.nav')
     <div class="content">
-        <div class="question">{{ $question }}</div>
+        <div class="question-box">{{ $question }}</div>
         <div class="buttons">
             <form method="POST" action="{{ route('answer', ['currentQuestion' => $questionNumber]) }}">
                 @csrf
@@ -138,5 +93,7 @@
             </form>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
 </body>
 </html>
