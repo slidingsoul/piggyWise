@@ -23,17 +23,35 @@
     
     <h1>Wishlist</h1>
     <div class="purple-container">
-        <h2 class="wish">Membeli Seblak</h2>
-        <p class="description">Saya ingin makan seblak</p>
-        <p class="cost">Harga: Rp15.000</p>
-        <p>Tenggat waktu: 30 Juni 2024</p>
-        <p>Tabunganku sekarang: Rp11.250</p>
-        <hr>
-        <p>Kurang Rp3.750 untuk mencapai wishlistmu!</p>
-        <p>Tabung sebanyak Rp1250 per hari untuk mencapai wishlistmu sesuai tenggatnya</p>
-        {{-- Taruh loading progress bar di sini --}}
+        <div class="inside-container">
+            <div class="text-fireworks-container">
+                <div class="text-container">
+                    <h2 class="wish">Membeli Seblak</h2>
+                    <p class="description">Saya ingin makan seblak</p>
+                    <p class="cost">Harga: Rp15.000</p>
+                    <p>Tenggat waktu: 30 Juni 2024</p>
+                    <p>Tabunganku sekarang: Rp11.250</p>
+                </div>
+                <div class="fireworks-container">
+                    {{-- Gunakan @if untuk img di bawah jika sudah 100% --}}
+                    <img src="{{asset('/img/openmoji_fireworks.svg')}}" alt="kembang api">
+                </div>
+            </div>
+            <hr>
+            <p>Kurang Rp3.750 untuk mencapai wishlistmu!</p>
+            <p>Tabung sebanyak Rp1.250 per hari untuk mencapai wishlistmu sesuai tenggatnya</p>
+            <div class="flexdiv">
+                <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    {{-- Ganti inline style width di bawah untuk progress tertentu --}}
+                    <div class="progress-bar" style="width: 90%"></div> 
+                </div>
+                {{-- Ganti teks di dalam p untuk progress tertentu --}}
+                <div style="margin-left: 50px; margin-top: -7px; font-weight: bold; font-size: 50px;"><p>90%</p></div>
+            </div>
+        </div>
     </div>
     <form action="#" method="get" class="form-container">
+        {{-- Ganti teks button menjadi selesai jika sudah selesai --}}
         <button type="submit" class="tabung-sekarang-btn">Tabung Sekarang!</button>
     </form>
     {{-- Bootstrap --}}
