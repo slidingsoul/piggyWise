@@ -25,6 +25,7 @@ Route::get('/leaderboard', function () {
 });
 
 Route::get('/saving', [SavingController::class, 'showSaving'])->name('saving');
+Route::get('/saving/data', [SavingController::class, 'getData'])->name('saving.data');
 Route::post('/tambah-pemasukan', [SavingController::class, 'tambahPemasukan'])->name('pemasukan');
 Route::post('/buat-pengeluaran', [SavingController::class, 'buatPengeluaran'])->name('pengeluaran');
 

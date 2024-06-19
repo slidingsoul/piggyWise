@@ -52,10 +52,14 @@ body {
 
 #pengeluaran {
     background-color: #BDE0FE;
+    padding: 20px;
+    padding-right: 40px;
 }
 
 #pemasukan {
     background-color: #FFC8DD;
+    padding: 20px;
+    padding-right: 40px;
 }
 
 .tab-history {
