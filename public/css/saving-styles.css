@@ -1,0 +1,64 @@
+body {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.saving {
+    width: 100vw;
+    height: 100vh;
+    background-color:#CDB4DB;
+    padding-top: 50px;
+
+}
+
+.flex-saving {
+    background-color: #FFAFCC;
+    width: 28%;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 4px 6px 0 #c8a7b4;
+    /* height: 200px; */
+}
+
+#rupiah {
+    border-radius: 15px;
+    padding:8px 15px;
+    border: none;
+    width: 100%x;
+}
+
+.button {
+    background-color: #BDE0FE;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 15px;
+}
+
+.history {
+    margin-top:100px;
+    width: 100vw;
+}
+
+.nav-item-saving {
+    border-radius:5px;
+}
+
+.table {
+    margin:auto;
+    /* padding:30px 0; */
+    width: 90%;
+    background-color: white;
+}
+
+#pengeluaran {
+    background-color: #BDE0FE;
+}
+
+#pemasukan {
+    background-color: #FFC8DD;
+}
+
+.tab-history {
+    padding:30px 0;
+}
+

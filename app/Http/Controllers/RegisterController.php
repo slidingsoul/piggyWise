@@ -21,6 +21,7 @@ class RegisterController extends Controller
         $user = new User;
         $user->username = $request->username;
         $user->password = bcrypt($request->password);
+        $user->saldo = 0;
         $user->rank = User::max('rank') + 1;
         $user->save();
 

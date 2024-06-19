@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->bigInteger('saldo'); //kolom saldo untuk user
             $table->integer('rank'); // kolom rank untuk setiap user
         });
 

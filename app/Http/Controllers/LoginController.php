@@ -19,8 +19,8 @@ class LoginController extends Controller
 
         if(auth()->attempt(['username' => $comingFields['username'], 'password' => $comingFields['password']])) {
             $request->session()->regenerate();
-            
-            return redirect('leaderboard');
+            $user = auth()->user();
+            return redirect()->route('saving');
         } else {
             return redirect('log');
         }
