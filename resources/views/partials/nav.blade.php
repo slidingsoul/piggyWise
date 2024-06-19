@@ -7,16 +7,16 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item question">
-             <a class="nav-link" href="#projects">Should I Buy It?</a>
+             <a class="nav-link" href="{{ route('question1') }}">Should I Buy It?</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  href="{{url('saving')}}">Saving</a>
+            <a class="nav-link {{Request::is('saving') ? 'active': ''}}" href="{{url('saving')}}">Saving</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{url('leaderboard')}}">Leaderboard</a>
+            <a class="nav-link {{Request::is('leaderboard') ? 'active': ''}}" aria-current="page" href="/leaderboard">Leaderboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{url('wishlist')}}">Wishlist</a>
+            <a class="nav-link {{Request::is('wishlist') ? 'active': ''}}" href="/wishlist">Wishlist</a>
           </li>
           <li class="nav-item">
             <form action="/logout" method="POST">
