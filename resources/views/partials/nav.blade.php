@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item question">
-             <a class="nav-link" href="#projects">Should I Buy It?</a>
+             <a class="nav-link" href="{{ route('question1') }}">Should I Buy It?</a>
           </li>
           <li class="nav-item">
             <a class="nav-link"  href="#about">Saving</a>
