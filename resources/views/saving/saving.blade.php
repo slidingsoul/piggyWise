@@ -91,7 +91,7 @@
                 <div class="tab-pane fade {{ $tab == 'pemasukan' ? 'show active' : '' }}" class="tab-history"
                     id="pemasukan" role="tabpanel" aria-labelledby="pemasukan-tab">
                     <div id="noPemasukanMessage" style="display:none;">Belum ada penambahan tabungan</div>
-                    <table id="tabelPemasukan" class="display cell-border compact stripe">
+                    <table id="tabelPemasukan" class="display table table-stripped w-100">
                         <thead>
                             <tr>
                                 <th>Tanggal</th>
@@ -106,7 +106,7 @@
                 <div class="tab-pane fade {{ $tab == 'pengeluaran' ? 'show active' : '' }}" id="pengeluaran"
                     class="tab-history" role="tabpanel" aria-labelledby="pengeluaran-tab">
                     <div id="noPengeluaranMessage" style="display:none;">Belum ada pengeluaran</div>
-                    <table id="tabelPengeluaran" class="display table">
+                    <table id="tabelPengeluaran" class="display table table-stripped w-100">
                         <thead>
                             <tr>
                                 <th>Tanggal</th>
@@ -132,50 +132,56 @@
 @stack('scripts')
     <script type="text/javascript">
         $(document).ready(function() {
-            // Initialize DataTables for both tables
             $('#tabelPemasukan').DataTable({
-                processing: true,
-                serverSide: true,
-                ajax: {
-                    url: '{{ route("saving") }}',
-                    data: function (d) {
-                        d.tab = 'pemasukan';
-                    }
+            processing: true,
+            serverSide: true,
+            ajax: {
+                url: '{{ route("saving.data") }}',
+                data: function (d) {
+                    d.tab = 'pemasukan';
                 },
-                columns: [
-                    { data: 'created_at', name: 'created_at' },
-                    { data: 'jumlah_pemasukan', name: 'jumlah_pemasukan' }
-                ]
-            });
-
-            $('#tabelPengeluaran').DataTable({
-                processing: true,
-                serverSide: true,
-                ajax: {
-                    url: '{{ route("saving") }}',
-                    data: function (d) {
-                        d.tab = 'pengeluaran';
-                    }
-                },
-                columns: [
-                    { data: 'created_at', name: 'created_at' },
-                    { data: 'jumlah_pengeluaran', name: 'jumlah_pengeluaran' }
-                ]
-            });
-
-            // Update URL and reload DataTable on tab click
-            $('#myTab button').on('click', function() {
-                var tab = $(this).data('bs-target').substring(1);
-                var url = new URL(window.location.href);
-                url.searchParams.set('tab', tab);
-                history.pushState(null, '', url);
-
-                if (tab == 'pemasukan') {
-                    $('#tabelPemasukan').DataTable().ajax.reload();
-                } else if (tab == 'pengeluaran') {
-                    $('#tabelPengeluaran').DataTable().ajax.reload();
+                error: function(xhr, error, code) {
+                    console.log('Ajax error:', xhr.responseText);
                 }
-            });
+            },
+            columns: [
+                { data: 'created_at', name: 'created_at' },
+                { data: 'jumlah_pemasukan', name: 'jumlah_pemasukan' }
+            ]
+        });
+
+        $('#tabelPengeluaran').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: {
+                url: '{{ route("saving.data") }}',
+                data: function (d) {
+                    d.tab = 'pengeluaran';
+                },
+                error: function(xhr, error, code) {
+                    console.log('Ajax error:', xhr.responseText);
+                }
+            },
+            columns: [
+                { data: 'created_at', name: 'created_at' },
+                { data: 'jumlah_pengeluaran', name: 'jumlah_pengeluaran' }
+            ]
+        });
+
+        // Update URL and reload DataTable on tab click
+        $('#myTab button').on('click', function() {
+            var tab = $(this).data('bs-target').substring(1);
+            var url = new URL(window.location.href);
+            url.searchParams.set('tab', tab);
+            history.pushState(null, '', url);
+
+            if (tab == 'pemasukan') {
+                $('#tabelPemasukan').DataTable().ajax.reload();
+            } else if (tab == 'pengeluaran') {
+                $('#tabelPengeluaran').DataTable().ajax.reload();
+            }
+        });
+            
 
             function formatRupiah(element, prefix) {
                 var number_string = element.value.replace(/[^,\d]/g, '').toString(),
