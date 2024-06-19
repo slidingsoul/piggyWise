@@ -10,13 +10,13 @@
              <a class="nav-link" href="#projects">Should I Buy It?</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  href="#about">Saving</a>
+            <a class="nav-link {{Request::is('saving') ? 'active': ''}}" href="/saving">Saving</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#projects">Leaderboard</a>
+            <a class="nav-link {{Request::is('leaderboard') ? 'active': ''}}" aria-current="page" href="/leaderboard">Leaderboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contact">Wishlist</a>
+            <a class="nav-link {{Request::is('wishlist') ? 'active': ''}}" href="/wishlist">Wishlist</a>
           </li>
           <li class="nav-item">
             <form action="/logout" method="POST">

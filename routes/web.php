@@ -21,3 +21,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/leaderboard', function () {
     return view('leaderboard.leaderboard');
 });
+
+Route::get('/wishlist', function() {
+    return view('wishlist.wishlist');
+});
