@@ -1,5 +1,7 @@
 body {
     background: #FFC8DD !important;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
 }
 
 h1 {
@@ -28,7 +30,12 @@ h1 {
     width: 25vw;
     margin: 0 auto;
     border-radius: 2rem;
-    padding: 12px 12px;
+    padding: 5px 5px;
+}
+
+.tabung-sekarang-btn a {
+    text-decoration: none;
+    color: black;
 }
 
 .form-container {
@@ -78,4 +85,10 @@ p {
 .fireworks-container {
     margin-left: 15vw;
     margin-top: -50px;
+}
+
+body .form-wishlist {
+    height: 100vh;
+    background-color: #BDE0FE;
+
 }

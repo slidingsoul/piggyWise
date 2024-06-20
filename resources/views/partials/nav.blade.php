@@ -16,7 +16,7 @@
             <a class="nav-link {{Request::is('leaderboard') ? 'active': ''}}" aria-current="page" href="{{url('leaderboard')}}">Leaderboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{Request::is('wishlist') ? 'active': ''}}" href="{{url('wishlist')}}">Wishlist</a>
+            <a class="nav-link {{Request::is('wishlist') ? 'active': ''}}" href="{{url('form-wishlist')}}">Wishlist</a>
           </li>
           <li class="nav-item">
             <form action="/logout" method="POST">

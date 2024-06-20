@@ -1,11 +1,12 @@
 body {
     width: 100vw;
     overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
 }
 
 .saving {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     background-color:#CDB4DB;
     padding-top: 50px;
 
@@ -13,7 +14,7 @@ body {
 
 .flex-saving {
     background-color: #FFAFCC;
-    width: 28%;
+    width: 31%;
     padding: 20px 30px;
     border-radius: 10px;
     box-shadow: 4px 6px 0 #c8a7b4;
@@ -37,6 +38,7 @@ body {
 .history {
     margin-top:100px;
     width: 100vw;
+    height: 100%;
 }
 
 .nav-item-saving {

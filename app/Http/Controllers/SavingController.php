@@ -19,63 +19,30 @@ class SavingController extends Controller
 
     public function getData(Request $request) {
         $user = auth()->user();
-        $tab = $request->query('tab', 'pemasukan');
+        $tab = $request->input('tab', 'pemasukan');
 
         if ($request->ajax()) {
             if ($tab == 'pemasukan') {
-                $pemasukan = Pemasukan::where('user_id', $user->id)->get(['created_at', 'jumlah_pemasukan']);
-                $pemasukan->transform(function($item, $key) {
-                    $item->created_at = Carbon::parse($item->created_at)->format('Y-m-d');
-                    return $item;
-                });
-                return response()->json(['data' => $pemasukan]);
+                $data = Pemasukan::where('user_id', $user->id);
+
+                return datatables()
+                    ->eloquent($data)
+                    ->editColumn('created_at', function($row) {
+                        return Carbon::parse($row->created_at)->format('Y-m-d H:i:s'); // ISO format
+                    })
+                    ->make(true);
             } elseif ($tab == 'pengeluaran') {
-                $pengeluaran = Pengeluaran::where('user_id', $user->id)->get(['created_at', 'jumlah_pengeluaran']);
-                $pengeluaran->transform(function($item, $key) {
-                    $item->created_at = Carbon::parse($item->created_at)->format('Y-m-d');
-                    return $item;
-                });
-                return response()->json(['data' => $pengeluaran]);
+                $data = Pengeluaran::where('user_id', $user->id);
+
+                return datatables()
+                    ->eloquent($data)
+                    ->editColumn('created_at', function($row) {
+                        return Carbon::parse($row->created_at)->format('Y-m-d H:i:s'); // ISO format
+                    })
+                    ->make(true);
             }
         }
     }
-
-    // public function showSaving(Request $request) {
-    //     $user = auth()->user();
-    //     $tab = $request->query('tab', 'pemasukan');
-
-    //     if ($request->ajax()) {
-    //         if ($tab == 'pemasukan') {
-    //             $pemasukan = Pemasukan::where('user_id', $user->id)->select(['created_at', 'jumlah_pemasukan']);
-    //             return datatable()->of($pemasukan)->make(true);
-    //         } elseif ($tab == 'pengeluaran') {
-    //             $pengeluaran = Pengeluaran::where('user_id', $user->id)->select(['created_at', 'jumlah_pengeluaran']);
-    //             return datatables()->of($pengeluaran)->make(true);
-    //         }
-    //     }
-
-    //     return view('saving.saving', ['user' => $user, 'tab' => $tab]);
-    // }
-
-    // public function showSaving(Request $request) {
-    //     $user = auth()->user();
-    //     $tab = $request->query('tab', 'pemasukan');
-
-    //     return view('saving.saving', ['user' => $user, 'tab' => $tab]);
-    // }
-
-    // public function getSavingData(Request $request) {
-    //     $user = auth()->user();
-    //     $tab = $request->query('tab', 'pemasukan');
-
-    //     if ($tab == 'pemasukan') {
-    //         $pemasukan = Pemasukan::where('user_id', $user->id)->select(['created_at', 'jumlah_pemasukan']);
-    //         return datatables()->of($pemasukan)->make(true);
-    //     } elseif ($tab == 'pengeluaran') {
-    //         $pengeluaran = Pengeluaran::where('user_id', $user->id)->select(['created_at', 'jumlah_pengeluaran']);
-    //         return datatables()->of($pengeluaran)->make(true);
-    //     }
-    // }
 
     public function tambahPemasukan(Request $request) {
         $request->validate([
@@ -113,5 +80,16 @@ class SavingController extends Controller
         $user->save();
 
         return redirect()->route('saving')->with('success', 'Pengeluaran berhasil dicatat.');
+    }
+
+    public function hapusHistoryPemasukan() {
+        $user = auth()->user();
+        Pemasukan::where('user_id', $user->id)->delete();
+        return redirect()->route('saving');
+    }
+    public function hapusHistoryPengeluaran() {
+        $user = auth()->user();
+        Pengeluaran::where('user_id', $user->id)->delete();
+        return redirect()->route('saving');
     }
 }
